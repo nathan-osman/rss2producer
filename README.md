@@ -24,7 +24,7 @@ To create a feed, simply use the `RSS2Feed` constructor:
         description='A longer description of the feed contents.'
     )
 
-Once the feed is created, you can add items with the `append_item` method:
+After the feed is created, you can add items with the `append_item` method:
 
     feed.append_item(
         title='Sample Item',
@@ -32,3 +32,8 @@ Once the feed is created, you can add items with the `append_item` method:
         description='A longer description of the sample item.',
         pub_date=datetime.utcnow()
     )
+
+When all of the items have been added to the feed, the XML contents can be
+obtained with:
+
+    feed.get_xml()
