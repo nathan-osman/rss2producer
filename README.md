@@ -1,5 +1,8 @@
 ## rss2producer
 
+[![Build Status](https://travis-ci.org/nathan-osman/rss2producer.svg)](https://travis-ci.org/nathan-osman/rss2producer)
+[![PyPI version](https://badge.fury.io/py/rss2producer.svg)](http://badge.fury.io/py/rss2producer)
+
 This package provides a Python script with an extremely simple class for
 generating an RSS 2.0 feed. With just a couple lines of Python code, your script
 can create an RSS 2.0 feed and add items to it.
