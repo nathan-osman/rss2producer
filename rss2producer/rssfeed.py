@@ -31,7 +31,8 @@ class RSS2Feed(object):
         element.appendChild(self._create_text_element('title', title))
         element.appendChild(self._create_text_element('link', link))
         element.appendChild(self._create_text_element('description', description))
-        element.appendChild(self._create_text_element('pubDate', formatdate(timegm(pub_date))))
+        element.appendChild(self._create_text_element('pubDate', formatdate(timegm(pub_date.utctimetuple()))))
+        self._channel.appendChild(element)
 
     def get_xml(self):
         """Return the XML for the feed."""
