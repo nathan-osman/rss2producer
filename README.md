@@ -1,7 +1,10 @@
 ## rss2producer
 
-[![Build Status](https://travis-ci.org/nathan-osman/rss2producer.svg)](https://travis-ci.org/nathan-osman/rss2producer)
-[![PyPI version](https://badge.fury.io/py/rss2producer.svg)](http://badge.fury.io/py/rss2producer)
+[![Build Status](http://img.shields.io/travis/nathan-osman/rss2producer.svg)](https://travis-ci.org/nathan-osman/rss2producer)
+[![Coverage](http://img.shields.io/coveralls/nathan-osman/rss2producer.svg)](https://coveralls.io/r/nathan-osman/rss2producer)
+[![PyPI Version](http://img.shields.io/pypi/v/nine.svg)](https://pypi.python.org/pypi/rss2producer)
+[![PyPI Downloads](http://img.shields.io/pypi/dm/rss2producer.svg)](https://pypi.python.org/pypi/rss2producer)
+[![License](http://img.shields.io/badge/license-MIT-red.svg)](http://opensource.org/licenses/MIT)
 
 This package provides a Python script with an extremely simple class for
 generating an RSS 2.0 feed. With just a couple lines of Python code, your script
