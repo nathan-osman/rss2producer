@@ -2,7 +2,7 @@
 
 [![Build Status](http://img.shields.io/travis/nathan-osman/rss2producer.svg)](https://travis-ci.org/nathan-osman/rss2producer)
 [![Coverage](http://img.shields.io/coveralls/nathan-osman/rss2producer.svg)](https://coveralls.io/r/nathan-osman/rss2producer)
-[![PyPI Version](http://img.shields.io/pypi/v/nine.svg)](https://pypi.python.org/pypi/rss2producer)
+[![PyPI Version](http://img.shields.io/pypi/v/rss2producer.svg)](https://pypi.python.org/pypi/rss2producer)
 [![PyPI Downloads](http://img.shields.io/pypi/dm/rss2producer.svg)](https://pypi.python.org/pypi/rss2producer)
 [![License](http://img.shields.io/badge/license-MIT-red.svg)](http://opensource.org/licenses/MIT)
 
