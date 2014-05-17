@@ -39,6 +39,10 @@ After the feed is created, you can add items with the `append_item` method:
         pub_date=datetime.utcnow()
     )
 
+At a minimum, `title` or `description` must be included; all other parameters
+are optional. The `pub_date` parameter can be either a `datetime` instance or a
+UTC timestamp.
+
 When all of the items have been added to the feed, the XML contents can be
 obtained with:
 
