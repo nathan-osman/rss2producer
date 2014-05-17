@@ -5,7 +5,10 @@ from email.utils import formatdate
 from xml.dom.minidom import Document
 
 class RSS2Feed(object):
-    """Represents an RSS 2.0 feed."""
+    """An RSS 2.0 feed."""
+
+    class FeedError(Exception):
+        """Error encountered while producing a feed."""
 
     def __init__(self, title, link, description):
         """Initialize the feed with the specified attributes.
@@ -30,19 +33,30 @@ class RSS2Feed(object):
         element.appendChild(self._document.createTextNode(text))
         return element
 
-    def append_item(self, title, link, description, pub_date):
+    def append_item(self, title=None, link=None, description=None, pub_date=None):
         """Append the specified item to the feed.
 
         :param title: brief title for the item
         :param link: URL for the page for the item
         :param description: longer drescription for the item
-        :param pub_date: datetime instance of the item's publication date
+        :param pub_date: UTC timestamp or datetime instance of the item's publication date
         """
+        # Either title or description *must* be present
+        if title is None and description is None:
+            raise self.FeedError("Either title or description must be provided.")
         element = self._document.createElement('item')
-        element.appendChild(self._create_text_element('title', title))
-        element.appendChild(self._create_text_element('link', link))
-        element.appendChild(self._create_text_element('description', description))
-        element.appendChild(self._create_text_element('pubDate', formatdate(timegm(pub_date.utctimetuple()))))
+        if not title is None:
+            element.appendChild(self._create_text_element('title', title))
+        if not link is None:
+            element.appendChild(self._create_text_element('link', link))
+        if not description is None:
+            element.appendChild(self._create_text_element('description', description))
+        if not pub_date is None:
+            try:
+                timestamp = int(pub_date)
+            except TypeError:
+                timestamp = timegm(pub_date.utctimetuple())
+            element.appendChild(self._create_text_element('pubDate', formatdate(timestamp)))
         self._channel.appendChild(element)
 
     def get_xml(self):
